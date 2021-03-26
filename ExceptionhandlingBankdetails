@@ -1,0 +1,396 @@
+package jdbcProject;
+import java.util.*;
+
+	public class exceptionDemo extends Exception {//1
+
+		exceptionDemo(String str) {//2
+	        super(str); //3
+	    }
+	    static int balance = 50000;
+
+	    public static void withdraw() {
+
+	        Scanner scw = new Scanner(System.in);
+	        System.out.println("Enter withdraw amount");
+	        int withdraw_amount = scw.nextInt();
+	        try {
+	            if (withdraw_amount <= balance) {
+	                balance = balance - withdraw_amount;
+	                System.out.println("Remaining balance" + balance);
+	            } else {
+	                throw new exceptionDemo("sorry! Insufficient balance");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+
+	        }
+
+	    }
+
+	    public static void deposit_amount() {
+
+	        Scanner scw = new Scanner(System.in);
+	        System.out.println("Enter withdraw amount");
+	        int deposit_amount = scw.nextInt();
+	        try {
+	            if (deposit_amount > 500) {
+	                balance = balance + deposit_amount;
+	                System.out.println("Remaining balance: " + balance);
+	            } else {
+	                throw new exceptionDemo(" please enter above 500");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+
+	    }
+
+	    public static void view_balance() {
+	        String user_name = "neelima";
+	        String password = "Neelima1!";
+
+	        Scanner sc = new Scanner(System.in);
+
+	        System.out.println("Enter usename: ");
+	        String usr_name = sc.next();
+	        System.out.println("Enter password: ");
+	        String pwd = sc.next();
+	        try {
+	            if (usr_name.equals(user_name) && pwd.equals(password)) {
+	                System.out.println(balance);
+	            } else {
+	                throw new exceptionDemo("Please enter valid user name and password:");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+
+	    }
+
+	    public static void main(String[] args) throws exceptionDemo {//4
+
+	                                                                                                                                                                                                                                                                                                                                      
+	        String user_name = "neelima";
+	        String password = "Neelima1!";
+
+	        Scanner sc = new Scanner(System.in);
+	        while (true) {
+	            System.out.println("Enter usename: ");
+	            String usr_name = sc.nexpackage jdbcProject;
+import java.util.*;
+
+	public class exceptionDemo extends Exception {//1
+
+		exceptionDemo(String str) {//2
+	        super(str); //3
+	    }
+	    static int balance = 50000;
+
+	    public static void withdraw() {
+
+	        Scanner scw = new Scanner(System.in);
+	        System.out.println("Enter withdraw amount");
+	        int withdraw_amount = scw.nextInt();
+	        try {
+	            if (withdraw_amount <= balance) {
+	                balance = balance - withdraw_amount;
+	                System.out.println("Remaining balance" + balance);
+	            } else {
+	                throw new exceptionDemo("sorry! Insufficient balance");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+
+	        }
+
+	    }
+
+	    public static void deposit_amount() {
+
+	        Scanner scw = new Scanner(System.in);
+	        System.out.println("Enter withdraw amount");
+	        int deposit_amount = scw.nextInt();
+	        try {
+	            if (deposit_amount > 500) {
+	                balance = balance + deposit_amount;
+	                System.out.println("Remaining balance: " + balance);
+	            } else {
+	                throw new exceptionDemo(" please enter above 500");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+
+	    }
+
+	    public static void view_balance() {
+	        String user_name = "neelima";
+	        String password = "Neelima1!";
+
+	        Scanner sc = new Scanner(System.in);
+
+	        System.out.println("Enter usename: ");
+	        String usr_name = sc.next();
+	        System.out.println("Enter password: ");
+	        String pwd = sc.next();
+	        try {
+	            if (usr_name.equals(user_name) && pwd.equals(password)) {
+	                System.out.println(balance);
+	            } else {
+	                throw new exceptionDemo("Please enter valid user name and password:");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+
+	    }
+
+	    public static void main(String[] args) throws exceptionDemo {//4
+
+	                                                                                                                                                                                                                                                                                                                                      
+	        String user_name = "neelima";
+	        String password = "Neelima1!";
+
+	        Scanner sc = new Scanner(System.in);
+	        while (true) {
+	            System.out.println("Enter usename: ");
+	            String usr_name = sc.next();
+	            System.out.println("Enter password: ");
+	            String pwd = sc.next();
+
+	            int count=0;;
+				try {
+
+	                if (usr_name.equals(user_name) && pwd.equals(password)) {
+
+	                    System.out.println("1. withdraw\n2.deposit\n3.view balence\n4.exit");
+	                    int menu = sc.nextInt();
+	                    switch (menu) {
+	                        case 1:
+	                            withdraw();
+	                            break;
+	                        case 2:
+	                            deposit_amount();
+	                            break;
+	                        case 3:
+	                            view_balance();
+	                            break;
+	                        case 4:
+	                        	System.exit(0);
+	                            break;
+	                        default:
+	                            System.out.println("default");
+
+	                    }
+
+	                } else {
+
+	                    count++;
+	                    System.out.println(count);
+	                    throw new exceptionDemo("Invalid username or password");
+
+	                }
+
+	            } catch (Exception e) {
+	                e.printStackTrace();
+
+	            }
+	            try {
+	                if (count >= 3) {
+	                    throw new exceptionDemo("sorry more than 3 attempts try after some time");
+	                }
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        }
+
+	    }
+	}
+
+
+t();
+	            System.out.println("Enter password: ");
+	            String pwd = sc.next();
+
+	            int count=0;;
+				try {
+
+	                if (usr_name.equals(user_name) && pwd.equals(password)) {
+
+	                    System.out.println("1. withdraw\n2.deposit\n3.view balence\n4.exit");
+	                    int menu = sc.nextInt();
+	                    switch (menu) {
+	                        case 1:
+	                            withdraw();
+	                            break;
+	                        case 2:
+	                            deposit_amount();
+	                            break;
+	                        case 3:
+	                            view_balance();
+	                            break;
+	                        case 4:package jdbcProject;
+import java.util.*;
+
+	public class exceptionDemo extends Exception {//1
+
+		exceptionDemo(String str) {//2
+	        super(str); //3
+	    }
+	    static int balance = 50000;
+
+	    public static void withdraw() {
+
+	        Scanner scw = new Scanner(System.in);
+	        System.out.println("Enter withdraw amount");
+	        int withdraw_amount = scw.nextInt();
+	        try {
+	            if (withdraw_amount <= balance) {
+	                balance = balance - withdraw_amount;
+	                System.out.println("Remaining balance" + balance);
+	            } else {
+	                throw new exceptionDemo("sorry! Insufficient balance");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+
+	        }
+
+	    }
+
+	    public static void deposit_amount() {
+
+	        Scanner scw = new Scanner(System.in);
+	        System.out.println("Enter withdraw amount");
+	        int deposit_amount = scw.nextInt();
+	        try {
+	            if (deposit_amount > 500) {
+	                balance = balance + deposit_amount;
+	                System.out.println("Remaining balance: " + balance);
+	            } else {
+	                throw new exceptionDemo(" please enter above 500");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+
+	    }
+
+	    public static void view_balance() {
+	        String user_name = "neelima";
+	        String password = "Neelima1!";
+
+	        Scanner sc = new Scanner(System.in);
+
+	        System.out.println("Enter usename: ");
+	        String usr_name = sc.next();
+	        System.out.println("Enter password: ");
+	        String pwd = sc.next();
+	        try {
+	            if (usr_name.equals(user_name) && pwd.equals(password)) {
+	                System.out.println(balance);
+	            } else {
+	                throw new exceptionDemo("Please enter valid user name and password:");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+
+	    }
+
+	    public static void main(String[] args) throws exceptionDemo {//4
+
+	                                                                                                                                                                                                                                                                                                                                      
+	        String user_name = "neelima";
+	        String password = "Neelima1!";
+
+	        Scanner sc = new Scanner(System.in);
+	        while (true) {
+	            System.out.println("Enter usename: ");
+	            String usr_name = sc.next();
+	            System.out.println("Enter password: ");
+	            String pwd = sc.next();
+
+	            int count=0;;
+				try {
+
+	                if (usr_name.equals(user_name) && pwd.equals(password)) {
+
+	                    System.out.println("1. withdraw\n2.deposit\n3.view balence\n4.exit");
+	                    int menu = sc.nextInt();
+	                    switch (menu) {
+	                        case 1:
+	                            withdraw();
+	                            break;
+	                        case 2:
+	                            deposit_amount();
+	                            break;
+	                        case 3:
+	                            view_balance();
+	                            break;
+	                        case 4:
+	                        	System.exit(0);
+	                            break;
+	                        default:
+	                            System.out.println("default");
+
+	                    }
+
+	                } else {
+
+	                    count++;
+	                    System.out.println(count);
+	                    throw new exceptionDemo("Invalid username or password");
+
+	                }
+
+	            } catch (Exception e) {
+	                e.printStackTrace();
+
+	            }
+	            try {
+	                if (count >= 3) {
+	                    throw new exceptionDemo("sorry more than 3 attempts try after some time");
+	                }
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        }
+
+	    }
+	}
+
+
+
+	                        	System.exit(0);
+	                            break;
+	                        default:
+	                            System.out.println("default");
+
+	                    }
+
+	                } else {
+
+	                    count++;
+	                    System.out.println(count);
+	                    throw new exceptionDemo("Invalid username or password");
+
+	                }
+
+	            } catch (Exception e) {
+	                e.printStackTrace();
+
+	            }
+	            try {
+	                if (count >= 3) {
+	                    throw new exceptionDemo("sorry more than 3 attempts try after some time");
+	                }
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        }
+
+	    }
+	}
+
+
